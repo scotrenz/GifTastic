@@ -21,7 +21,7 @@ function renderButtons() {
 
 function ajaxCall(gifClick) {
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + gifClick + "&api_key=PaFcTgHVMUyoqzbH2TfoZpjVpeHwKWrM&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifClick + "&api_key=PaFcTgHVMUyoqzbH2TfoZpjVpeHwKWrM&limit=10";
 
     $.ajax({
         url: queryURL,
