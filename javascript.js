@@ -2,24 +2,19 @@ var gifList = ["adam sandler", "jim carrey", "greg davies", "chris farley"];
 
 function renderButtons() {
 
-    // Deleting the movies prior to adding new movies
-    // (this is necessary otherwise we will have repeat buttons)
+
     $("#buttons-view").empty();
 
-    // Looping through the array of movies
     var len = gifList.length;
     for (var i = 0; i < len; i++) {
 
-        // Then dynamicaly generating buttons for each movie in the array
-        // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         var a = $("<button>");
-        // Adding a class
+
         a.addClass("gif btn btn-primary");
-        // Added a data-attribute
+
         a.attr("data-name", gifList[i]);
-        // Provided the initial button text
+
         a.text(gifList[i]);
-        // Added the button to the HTML
         $("#buttons-view").append(a);
     }
 }
@@ -59,13 +54,10 @@ function ajaxCall(gifClick) {
 $("#add-gif-btn").on("click", function(event) {
     event.preventDefault();
 
-    // This line grabs the input from the textbox
     var gif = $("#gif-input").val().trim();
 
-    // The movie from the textbox is then added to our array
     gifList.push(gif);
 
-    // Calling renderButtons which handles the processing of our movie array
     renderButtons();
 });
 
@@ -87,5 +79,4 @@ $(document).on("click", "img", function() {
 
 })
 
-// Calling the renderButtons function to display the intial buttons
 renderButtons();
